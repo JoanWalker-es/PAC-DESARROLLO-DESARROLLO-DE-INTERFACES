@@ -57,7 +57,6 @@ public class LogicaJuego {
     public void cambioTurno(){
         // Inserta código aquí...
         
-    	System.out.println("Cambio turno");
     	if(turno==1) {
         	setTurno(0);
         }else if(turno==0) {
@@ -77,7 +76,7 @@ public class LogicaJuego {
         // Comprobar horizontal        
         //Comprobar vertical       
         //Comprobar en diagonal
-    	System.out.println("Comprobar Juego");
+    	
         if(matriz[0][0]==turno && matriz[1][0]==turno && matriz[2][0]==turno) {
         	return 1;
         }else if(matriz[0][1]==turno && matriz[1][1]==turno && matriz[2][1]==turno) {
@@ -113,9 +112,8 @@ public class LogicaJuego {
      * @return 
      */
     public int tiradaJugador(javax.swing.JButton bt, int x, int y, int matriz[][], javax.swing.JPanel jp, javax.swing.JLabel lX, javax.swing.JLabel lO){
-        // Inserta código aquí...
-        
-    	System.out.println("Tirada Jugador");
+        // Inserta código aquí...        
+    	
     	
         bt.setEnabled(false);
         
@@ -148,15 +146,12 @@ public class LogicaJuego {
      */
     public void ganador(javax.swing.JLabel lX, javax.swing.JLabel lO){
         // Inserta código aquí...        
-        // Incrementa jugador ganador e inserta resultado en jLabel
+        // Incrementa jugador ganador e inserta resultado en jLabel    	
     	
-    	System.out.println("Ganador");
     	if(turno==0) {
-    		System.out.println("turno X ganador");
     		pX++;   
     		lX.setText(pX+"");
     	}else if(turno==1) {
-    		System.out.println("turno O ganador");
     		pO++;	
     		lO.setText(pO+"");
     	}  
@@ -169,8 +164,7 @@ public class LogicaJuego {
      */
     public void habilitarTablero( javax.swing.JPanel jp){
         // Inserta código aquí...
-        // Bloquea todos los elementos del JPanel
-    	
+        // Bloquea todos los elementos del JPanel    	
     	
     	for (Component component : jp.getComponents()) {
     		   component.setEnabled(habilitado); 
@@ -231,14 +225,12 @@ public class LogicaJuego {
      * @param jp (Panel dónde se sitúa el tablero de juego)
      */
     public void iniciarPartida(int matriz[][], javax.swing.JPanel jp){
-        // Rellenamos la matriz por primera vez, evitando que se repitan los números
-    	System.out.println("Iniciar Partida");
+        // Rellenamos la matriz por primera vez, evitando que se repitan los números    	
     	for (int x = 0; x < 3; x++){
             for (int y = 0; y < 3; y++){
                 matriz[x][y]=(x+10)*(y+10);
             }
-        }
-        
+        }        
 
         // Habilitar tablero
          habilitado = true;
